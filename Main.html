@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Lorem ipsum</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="myCss.css">
+</head>
+
+<body>
+  <!--Nav;Logo;Login-->
+  <div>
+      <img src="images/logo.jpg" alt="Logo" height="100" width="200">
+  </div>
+    <nav>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="login.html" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign up</a>
+        </li>
+      </ul>
+    </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="loginform" action="main.html">
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="username">Name</label>
+          <input type="text" class="form-control mb-2" id="username" placeholder="Username" /required>
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="password">Username</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+            </div>
+            <input type="password" class="form-control" id="password" placeholder="Password" /required>
+          </div>
+        </div>
+        <div class="col-auto">
+        </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--jumbotron-->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" id="welcomeuser"></h1>
+    <p class="lead">Search flights below.</p>
+  </div>
+</div>
+    <!--Form;Textfields-->
+    <form>
+      <div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline1">Returning</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">One way</label>
+</div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label for="inputEmail4">From</label>
+          <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputPassword4">To</label>
+          <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputEmail4">Depart</label>
+          <input type="date" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputPassword4">Return</label>
+          <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+      </div>
+        <div class="custom-control custom-radio custom-control-inline">
+        <div class="form-group col-md-1">
+        <label for="adult">Adult</label>
+        <input type="number" id="adult" placeholder="0" min="0">
+        <label for="adult">Child</label>
+        <input type="number" id="adult" placeholder="0" min="0">
+        <label for="adult">Infant</label>
+        <input type="number" id="adult" placeholder="0" min="0">
+      </div>
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="inputState">Cabin Class</label>
+          <select id="inputState" class="form-control">
+             <option value="" disabled selected></option>
+            <option>Economy</option>
+            <option>Business</option>
+          </select>
+        </div>
+      </div>
+    </div>
+      <button type="submit" class="btn btn-outline-primary">Search</button>
+    </form>
+
+
+  </body>
+  <footer>
+    <img src="images/footer.png" alt="Top picks">
+    <script src="js/myJQuery.js"></script>
+    <script src="js/myJScript.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </footer>
+  </html>
