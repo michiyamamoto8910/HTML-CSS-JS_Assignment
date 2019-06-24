@@ -45,7 +45,7 @@
                 <div class="input-group mb-2">
                   <div class="input-group-prepend">
                   </div>
-                  <input type="password" class="form-control" id="password" placeholder="Password" /required>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
               </div>
               <div class="col-auto">
@@ -69,31 +69,32 @@
   </div>
   <!--Form;Textfields-->
   <form>
+    <div>
     <div class="custom-control custom-radio custom-control-inline">
-      <input  onclick="document.getElementById('return').disabled = false;" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked="checked">
+      <input  onclick="document.getElementById('returnDiv').style.display='block'" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked="checked">
       <label class="custom-control-label" for="customRadioInline1">Returning</label>
     </div>
     <div class="custom-control custom-radio custom-control-inline">
-      <input onclick="document.getElementById('return').disabled = true"  type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+      <input onclick="document.getElementById('returnDiv').style.display='none'"   type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
       <label class="custom-control-label" for="customRadioInline2">One way</label>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
-        <label for="inputEmail4">From</label>
+        <label for="inputEmail4" class="badge badge-primary">From</label>
         <input type="text" class="form-control" id="from" placeholder="Email">
       </div>
       <div class="form-group col-md-2">
-        <label for="inputPassword4">To</label>
+        <label for="inputPassword4" class="badge badge-pill badge-info">To</label>
         <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
-        <label for="inputEmail4">Depart</label>
+        <label for="inputEmail4" class="badge badge-primary">Depart</label>
         <input type="date" class="form-control" id="inputEmail4" placeholder="Email">
       </div>
-      <div class="form-group col-md-2">
-        <label for="inputPassword4">Return</label>
+      <div class="form-group col-md-2" id="returnDiv">
+        <label for="inputPassword4" class="badge badge-pill badge-info">Return</label>
         <input type="date" class="form-control" id="return" placeholder="Password">
       </div>
     </div>
@@ -118,7 +119,8 @@
       </div>
     </div>
   </div>
-
+    </div>
+    
   <button type="submit" class="btn btn-outline-primary">Search</button>
 </form>
 

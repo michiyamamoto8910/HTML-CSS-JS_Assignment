@@ -1,9 +1,9 @@
 $(document).ready(function(e){
   var storage=window.localStorage
   $(`#loginform`).on(`submit`,function(e){
-          var username=$(`#username`).val()
-          storage.setItem('username',username)
-          console.log(username);
+    var username=$(`#username`).val()
+    storage.setItem('username',username)
+    console.log(username);
   })
   var greeting = 'Welcome!'
   var emptyusername='Guest'
@@ -14,8 +14,8 @@ $(document).ready(function(e){
   var storedUsername=storage.getItem('username')||emptyusername
   $(`#welcomeuser`).text(greeting+' '+storedUsername)
   $(`#welcomemessage`).text(welcomemessage)
-  storage.clear()
 })
+
 
 
 
