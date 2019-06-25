@@ -10,7 +10,9 @@
 <body>
   <!--Nav;Logo;Login-->
   <div>
+    <a href="main.html">
     <img src="images/logo.jpg" alt="Logo" height="100" width="200">
+  </a>
   </div>
   <nav>
     <ul class="nav justify-content-end">
@@ -68,60 +70,68 @@
     </div>
   </div>
   <!--Form;Textfields-->
-  <form action="searchResults.html">
+  <form id="search-form" action="searchResults.html">
     <div class="totheright">
     <div class="custom-control custom-radio custom-control-inline">
       <input  onclick="document.getElementById('returnDiv').style.display='block'" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked="checked">
       <label class="custom-control-label" for="customRadioInline1">Returning</label>
     </div>
     <div class="custom-control custom-radio custom-control-inline">
-      <input onclick="document.getElementById('returnDiv').style.display='none'"   type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-      <label class="custom-control-label" for="customRadioInline2">One way</label>
+      <input onclick="document.getElementById('returnDiv').style.display='none'" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+      <label class="custom-control-label" for="customRadioInline2">One way</label><br>
     </div>
+
     <div class="form-row">
       <div class="form-group col-md-2">
-        <label for="inputEmail4" class="badge badge-primary">From</label>
-        <input type="text" class="form-control" id="from" placeholder="Email">
+        <label for="from" class="badge badge-primary">From</label>
+        <input type="text" class="form-control" id="from" placeholder="">
       </div>
-      <div class="form-group col-md-2">
+      <div class="totherightside">
+      <div class="form-group col-md-11">
         <label for="inputPassword4" class="badge badge-pill badge-info">To</label>
-        <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+        <input type="text" class="form-control" id="inputPassword4" placeholder="">
       </div>
+    </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
         <label for="inputEmail4" class="badge badge-primary">Depart</label>
-        <input type="date" class="form-control" id="inputEmail4" placeholder="Email">
+        <input type="date" class="form-control" id="inputEmail4" placeholder="">
       </div>
-      <div class="form-group col-md-2" id="returnDiv">
+      <div class="totherightside">
+
+      <div class="form-group col-md-12" id="returnDiv">
         <label for="inputPassword4" class="badge badge-pill badge-info">Return</label>
-        <input type="date" class="form-control" id="return" placeholder="Password">
+        <input type="date" class="form-control" id="return" placeholder="">
       </div>
     </div>
-    <div>
+    </div>
+    <br>
       <div>
-        <label for="adult">Adult</label>
-        <input type="number" id="adult" placeholder="0" min="0">
-        <label for="adult">Child</label>
-        <input type="number" id="child" placeholder="0" min="0">
-        <label for="adult">Infant</label>
-        <input type="number" id="infant" placeholder="0" min="0">
+        <h4>Travellers</h4>
+        <label for="number-of-adults">Adult</label>
+        <input type="number" id="number-of-adults" placeholder="0" min="1">
+        <label for="number-of-child">Child</label>
+        <input type="number" id="number-of-child" placeholder="0" min="1">
+        <label for="number-of-infants">Infant</label>
+        <input type="number" id="number-of-infants" placeholder="0" min="1">
       </div>
-    </div>
+      <div id="searchbutton">
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+      </div>
     <div class="form-row">
       <div class="form-group col-md-2">
-        <label for="inputState">Cabin Class</label>
-        <select id="inputState" class="form-control">
+        <br>
+        <label for="cabin"><h4>Cabin Class</h4></label>
+        <select class="form-control" id="cabin">
           <option value="" disabled selected></option>
           <option>Economy</option>
           <option>Business</option>
         </select>
+
       </div>
     </div>
   </div>
-    </div>
-
-  <button type="submit" class="btn btn-outline-primary">Search</button>
 </form>
 
 
