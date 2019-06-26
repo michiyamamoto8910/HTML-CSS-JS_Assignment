@@ -93,6 +93,10 @@ $(document).ready(function(e){
 
 })
 
+// function passengerButton(display,submit){
+//   getElementById('display').style.display='block'
+//   getElementById(`submit`).style.display='none'
+// }
 
 
 

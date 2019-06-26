@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Lorem Ipsum</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="myCss.css">
+</head>
+<body>
+
+  <div>
+    <a href="main.html">
+      <img src="images/logo.jpg" alt="Logo" height="100" width="200">
+    </a>
+  </div>
+  <nav>
+    <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="login.html" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign up</a>
+      </li>
+    </ul>
+  </nav>
+
+<form class="" action="index.html" method="post">
+
+  <h1 class="h2">Personal Information</h1>
+  <div class="totheright">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="first-name" class="">First name</label>
+      <input type="text" class="form-control" id="first-name" placeholder="" >
+    </div>
+    <div class="totherightside">
+      <div class="form-group col-md-11">
+        <label for="last-name" class="">Last name</label>
+        <input type="text" class="form-control" id="last-name" placeholder="" >
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="birth-date" class="">Birth Date</label>
+      <input type="date" class="form-control" id="birth-date" placeholder="">
+    </div>
+  </div>
+  </div>
+
+  <h1 class="h2">Passport Information</h1>
+  <div class="totheright">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="passport-number" class="">Passport number</label>
+      <input type="text" class="form-control" id="passport-number" placeholder="" >
+    </div>
+    <div class="totherightside">
+      <div class="form-group col-md-11">
+        <label for="nationality" class="">Nationality</label>
+        <input type="text" class="form-control" id="nationality" placeholder="" >
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="passport-expiration" class="">Expiration Date</label>
+      <input type="date" class="form-control" id="passport-expiration" placeholder="">
+    </div>
+  </div>
+  <div id="searchbutton">
+      <button type="submit" class="btn btn-outline-primary" id="submit-button">Submit</button>
+      <button onclick="getElementById('another-passenger').style.display='block';
+      getElementById(`submit-button`).style.display='none';
+      getElementById(`second-passenger`).style.display='block'" type="button" class="btn btn-warning" >Add Another passenger</button>
+    </div>
+  </div>
+
+
+</form>
+
+
+<!-- SECOND FORM FOR ADD ANOTHER PASSENGER -->
+<form class="" action="index.html" method="post">
+<div style="display:none" id="another-passenger">
+  <h1 class="h1" id="second-passenger" style="display:none">Passenger 2</h1>
+  <h1 class="h2">Personal Information</h1><br>
+  <div class="totheright">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="first-name" class="">First name</label>
+      <input type="text" class="form-control" id="first-name" placeholder="" >
+    </div>
+    <div class="totherightside">
+      <div class="form-group col-md-11">
+        <label for="last-name" class="">Last name</label>
+        <input type="text" class="form-control" id="last-name" placeholder="" >
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="birth-date" class="">Birth Date</label>
+      <input type="date" class="form-control" id="birth-date" placeholder="">
+    </div>
+  </div>
+  </div>
+
+  <h1 class="h2">Passport Information</h1>
+  <div class="totheright">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="passport-number" class="">Passport number</label>
+      <input type="text" class="form-control" id="passport-number" placeholder="" >
+    </div>
+    <div class="totherightside">
+      <div class="form-group col-md-11">
+        <label for="nationality" class="">Nationality</label>
+        <input type="text" class="form-control" id="nationality" placeholder="" >
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="passport-expiration" class="">Expiration Date</label>
+      <input type="date" class="form-control" id="passport-expiration" placeholder="">
+    </div>
+  </div>
+  <div id="searchbutton">
+      <button type="submit" class="btn btn-outline-primary">Submit</button>
+      <button onclick="getElementById(`another-passenger`).style.display='none';
+      getElementById(`submit-button`).style.display='block'"type="button" name="button"
+      class="btn btn-danger">Cancel adding</button>
+    </div>
+  </div>
+</div>
+</form>
+
+
+</body>
+<footer>
+  <script src="js/myJQuery.js"></script>
+  <script src="js/myJScript.js"> </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</footer>
+</html>
