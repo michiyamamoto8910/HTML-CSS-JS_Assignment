@@ -71,14 +71,12 @@
     </div>
   </div>
   <div id="searchbutton">
-      <button type="submit" class="btn btn-outline-primary" id="submit-button">Submit</button>
+      <button id="confirm-passenger" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirm-details-modal">Submit</button>
       <button onclick="getElementById('another-passenger').style.display='block';
-      getElementById(`submit-button`).style.display='none';
-      getElementById(`second-passenger`).style.display='block'" type="button" class="btn btn-warning" >Add Another passenger</button>
+      getElementById(`confirm-passenger`).style.display='none';
+      getElementById(`second-passenger`).style.display='block'" type="button" class="btn btn-warning btn-lg" >Add Another passenger</button>
     </div>
   </div>
-
-
 </form>
 
 
@@ -91,12 +89,12 @@
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="first-name" class="">First name</label>
-      <input type="text" class="form-control" id="first-name" placeholder="" >
+      <input type="text" class="form-control" id="second-first-name" placeholder="" >
     </div>
     <div class="totherightside">
       <div class="form-group col-md-11">
         <label for="last-name" class="">Last name</label>
-        <input type="text" class="form-control" id="last-name" placeholder="" >
+        <input type="text" class="form-control" id="second-last-name" placeholder="" >
       </div>
     </div>
   </div>
@@ -114,7 +112,7 @@
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="passport-number" class="">Passport number</label>
-      <input type="text" class="form-control" id="passport-number" placeholder="" >
+      <input type="text" class="form-control" id="second-passport-number" placeholder="" >
     </div>
     <div class="totherightside">
       <div class="form-group col-md-11">
@@ -131,16 +129,44 @@
     </div>
   </div>
   <div id="searchbutton">
-      <button type="submit" class="btn btn-outline-primary">Submit</button>
+      <button id="another-confirm-passenger" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirm-details-modal">Submit</button>
       <button onclick="getElementById(`another-passenger`).style.display='none';
-      getElementById(`submit-button`).style.display='block'"type="button" name="button"
-      class="btn btn-danger">Cancel adding</button>
+      getElementById(`confirm-passenger`).style.display='block';"type="button" name="button"
+      class="btn btn-danger btn-lg">Cancel adding</button>
     </div>
   </div>
 </div>
 </form>
 
 
+<!-- Modal -->
+<div class="modal fade" id="confirm-details-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6 id="first-name-modal"></h6>
+        <h6 id="passport-number-modal"></h6>
+
+        <h6 id="line-for-display"></h6>
+
+        <h6 id = "other-passenger-name"></h6>
+        <h6 id = "other-passenger-passport-number"></h6>
+
+      </div>
+      <div class="modal-footer">
+        <a href="payment.html" role="button" class="btn btn-primary btn-sm">Proceed to payment</a>
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <footer>
   <script src="js/myJQuery.js"></script>

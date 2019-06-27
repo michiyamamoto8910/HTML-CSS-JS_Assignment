@@ -93,13 +93,69 @@ $(document).ready(function(e){
 
 })
 
-// function passengerButton(display,submit){
-//   getElementById('display').style.display='block'
-//   getElementById(`submit`).style.display='none'
-// }
+// for passenger details modal
+  $(`#confirm-passenger`).click(function(e){
+    var storage = window.localStorage
+    var firstName=$(`#first-name`).val()
+    var lastName=$(`#last-name`).val()
+    var passportNumber=$(`#passport-number`).val()
+
+    storage.setItem('first-name',firstName)
+    storage.setItem(`last-name`,lastName)
+    storage.setItem(`passport-number`,passportNumber)
+
+  var firstNameOfPassenger = storage.getItem('first-name')
+  var lastNameOfPassenger = storage.getItem(`last-name`)
+  var passportNumberOfPassenger = storage.getItem(`passport-number`)
+
+    var modalNameLabel = "Name: "
+    var passportNumberLabel = "Passport Number: "
 
 
 
+  $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
+  $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
+})
+
+//for second passenger
+$(`#another-confirm-passenger`).click(function(e){
+    var storage = window.localStorage
+    var firstName=$(`#first-name`).val()
+    var lastName=$(`#last-name`).val()
+    var passportNumber=$(`#passport-number`).val()
+    var secondFirstName = $(`#second-first-name`).val()
+    var secondLastName = $(`#second-last-name`).val()
+    var secondPassportNumber = $(`#second-passport-number`).val()
+
+    storage.setItem('first-name',firstName)
+    storage.setItem(`last-name`,lastName)
+    storage.setItem(`passport-number`,passportNumber)
+    storage.setItem(`second-first-name`,secondFirstName)
+    storage.setItem(`second-last-name`,secondLastName)
+    storage.setItem(`second-passport-number`,secondPassportNumber)
+
+  var firstNameOfPassenger = storage.getItem('first-name')
+  var lastNameOfPassenger = storage.getItem(`last-name`)
+  var passportNumberOfPassenger = storage.getItem(`passport-number`)
+  var secondFirstNameOfPassenger= storage.getItem('second-first-name')
+  var secondLastNameOfPassenger = storage.getItem('second-last-name')
+  var secondPassportNumberOfPassenger = storage.getItem('second-passport-number')
+
+  var modalNameLabel = "Name: "
+  var passportNumberLabel = "Passport Number: "
+
+  let line = "------------------------------------------------------------------------"
+  let displayName = "Name: "
+  let displayPassportNumber = "Passport number: "
+  console.log(secondFirstNameOfPassenger);
+  $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
+  $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
+
+  $(`#line-for-display`).text(line)
+  $(`#other-passenger-name`).text(displayName + secondFirstNameOfPassenger +" " + secondLastName)
+  $(`#other-passenger-passport-number`).text(displayPassportNumber + secondPassportNumberOfPassenger)
+
+})
 
 
 

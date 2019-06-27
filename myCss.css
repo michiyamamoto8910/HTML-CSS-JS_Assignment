@@ -9,6 +9,11 @@
 #searchbutton{
   margin-left: 40%
 }
+#confirm-passenger{
+  position:absolute;
+  top:625px;
+  left:450px;
+}
 /* textfields */
 .totheright{
 margin-left: 7%
@@ -116,4 +121,10 @@ margin-left: 7%
 }
 .card-text{
   font-weight: bold
+}
+
+/*Payment section*/
+.payment-images{
+  width: 5%;
+  height: 5%;
 }
