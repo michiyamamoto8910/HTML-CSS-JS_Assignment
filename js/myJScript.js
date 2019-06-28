@@ -90,28 +90,31 @@ $(document).ready(function(e){
   $(`.whereTo`).text(whereTo)
   $(`.whereToReturn`).text(whereTo)
 
-// DISPLAY IN SUMMARY
-  $(`#summary-name`).text()
+  // DISPLAY IN SUMMARY
+  $(`#summary-from-where`).text(fromWhere)
+  $(`#summary-from-to`).text(whereTo)
+  $(`#summary-depart-date`).text(departDate)
+  $(`#summary-return-date`).text(returnDate)
+  $(`#summary-travellers`).text(adultNumber + adult + childNumber + child + infantNumber + infant)
+  $(`#summary-cabin-class`).text(cabinClass + " Class")
 
 })
 
-// $(document).ready(function(e){
-//     var storage = window.localStorage
-//     $(`#go-to-passenger-details`).on(`submit`,function(e){
-// $(`#show-depart-date`).text(getDepartDate)
-// })
-// //e.preventDefault()
-// var setDepartDate = document.getElementById('try').innerHTML
-// storage.setItem('get-depart-date',setDepartDate)
-// var getDepartDate = storage.getItem('get-depart-date')
-// console.log(getDepartDate);
-//
-// })
-// for passenger details modal
-$(document).ready(function(e){
+// FOR GETTING TIME
+ $(document).ready(function(e){
   var storage = window.localStorage
-  $(`#confirm-passenger`).click(function(e){
+  $(`#go-to-passenger-details`).on(`submit`,function(e){
+  var setDepartDate = document.getElementById('try').innerHTML
+ storage.setItem('get-depart-date',setDepartDate)
+ console.log(getDepartDate);
+})
+var getDepartDate = storage.getItem('get-depart-date')
+$(`#summary-depart-time`).text(getDepartDate)
+})
+// for passenger details modal
 
+  $(`#confirm-passenger`).click(function(e){
+    var storage = window.localStorage
     var firstName=$(`#first-name`).val()
     var lastName=$(`#last-name`).val()
     var passportNumber=$(`#passport-number`).val()
@@ -119,24 +122,23 @@ $(document).ready(function(e){
     storage.setItem('first-name',firstName)
     storage.setItem(`last-name`,lastName)
     storage.setItem(`passport-number`,passportNumber)
-
-  var firstNameOfPassenger = storage.getItem('first-name')
-  var lastNameOfPassenger = storage.getItem(`last-name`)
-  var passportNumberOfPassenger = storage.getItem(`passport-number`)
+    var firstNameOfPassenger = storage.getItem('first-name')
+    var lastNameOfPassenger = storage.getItem(`last-name`)
+    var passportNumberOfPassenger = storage.getItem(`passport-number`)
 
     var modalNameLabel = "Name: "
     var passportNumberLabel = "Passport Number: "
 
-  $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
-  $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
+    $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
+    $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
 
-})
-// DISPLAY IN SUMMARY
-  $(`#summary-name`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
-})
+    // DISPLAY IN SUMMARY
+    $(`#summary-name`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
+  })
+
 
 //for second passenger
-$(`#another-confirm-passenger`).click(function(e){
+  $(`#another-confirm-passenger`).click(function(e){
     var storage = window.localStorage
     var firstName=$(`#first-name`).val()
     var lastName=$(`#last-name`).val()
@@ -152,28 +154,29 @@ $(`#another-confirm-passenger`).click(function(e){
     storage.setItem(`second-last-name`,secondLastName)
     storage.setItem(`second-passport-number`,secondPassportNumber)
 
-  var firstNameOfPassenger = storage.getItem('first-name')
-  var lastNameOfPassenger = storage.getItem(`last-name`)
-  var passportNumberOfPassenger = storage.getItem(`passport-number`)
-  var secondFirstNameOfPassenger= storage.getItem('second-first-name')
-  var secondLastNameOfPassenger = storage.getItem('second-last-name')
-  var secondPassportNumberOfPassenger = storage.getItem('second-passport-number')
+    var firstNameOfPassenger = storage.getItem('first-name')
+    var lastNameOfPassenger = storage.getItem(`last-name`)
+    var passportNumberOfPassenger = storage.getItem(`passport-number`)
+    var secondFirstNameOfPassenger= storage.getItem('second-first-name')
+    var secondLastNameOfPassenger = storage.getItem('second-last-name')
+    var secondPassportNumberOfPassenger = storage.getItem('second-passport-number')
 
-  var modalNameLabel = "Name: "
-  var passportNumberLabel = "Passport Number: "
+    var modalNameLabel = "Name: "
+    var passportNumberLabel = "Passport Number: "
 
-  let line = "------------------------------------------------------------------------"
-  let displayName = "Name: "
-  let displayPassportNumber = "Passport number: "
-  console.log(secondFirstNameOfPassenger);
-  $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
-  $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
+    let line = "------------------------------------------------------------------------"
+    let displayName = "Name: "
+    let displayPassportNumber = "Passport number: "
+    console.log(secondFirstNameOfPassenger);
+    $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
+    $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
 
-  $(`#line-for-display`).text(line)
-  $(`#other-passenger-name`).text(displayName + secondFirstNameOfPassenger +" " + secondLastName)
-  $(`#other-passenger-passport-number`).text(displayPassportNumber + secondPassportNumberOfPassenger)
+    $(`#line-for-display`).text(line)
+    $(`#other-passenger-name`).text(displayName + secondFirstNameOfPassenger +" " + secondLastNameOfPassenger)
+    $(`#other-passenger-passport-number`).text(displayPassportNumber + secondPassportNumberOfPassenger)
+  })
 
-})
+
 
 // payment section
 
@@ -183,13 +186,29 @@ $(`#visa`).click(function(e){
 })
 $(`#paypal`).click(function(e){
   var showLogo = "Paypal"
-    $(`#display-what-type-of-payment`).text(showLogo)
+  $(`#display-what-type-of-payment`).text(showLogo)
 })
 $(`#mastercard`).click(function(e){
   var showLogo = "Master Card"
-    $(`#display-what-type-of-payment`).text(showLogo)
+  $(`#display-what-type-of-payment`).text(showLogo)
 })
 
+// $(document).ready(function(e){
+//   var storage = window.localStorage
+//   $(`#form-of-payment`).on(`submit`,function(e){
+//     var fname= $(`#payment-first-name`).val()
+//     var lname = $(`#payment-last-name`).val()
+//
+//     storage.setItem('first-name', fname)
+//     storage.setItem('last-name', lname)
+//   })
+//   var firstNameOfPassengerFromPayment = storage.getItem('first-name')
+//   var lastNameOfPassengerFromPayment = storage.getItem('last-name')
+//   var nameForSummary = "Name: "
+//   console.log(firstNameOfPassengerFromPayment);
+//   $(`#summary-name`).text(nameForSummary+firstNameOfPassengerFromPayment)
+//
+// })
 
 
 
