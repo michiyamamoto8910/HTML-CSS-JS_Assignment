@@ -125,6 +125,29 @@ margin-left: 7%
 
 /*Payment section*/
 .payment-images{
-  width: 5%;
-  height: 5%;
+  width: 10%;
+  height: 10%;
+}
+#payment-first-name, #payment-last-name{
+  width: 250px
+}
+#payment-last-name, #expiration-date{
+  position: absolute;
+  left: -220px
+}
+#cv-code{
+  width: 100px
+}
+#payment-label-last-name, #payment-label-expiration-date{
+  position: absolute;
+  left: -220px
+}
+#credit-number{
+  width: 180px
+}
+#expiration-date{
+  width: 180px
+}
+#bottom-image{
+  width: auto;
 }

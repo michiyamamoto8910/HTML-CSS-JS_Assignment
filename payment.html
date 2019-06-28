@@ -23,12 +23,67 @@
       </ul>
     </nav>
     <p>Click images to select</p>
-    <img class="payment-images" src="images/visa.png" alt="">
-    <img class="payment-images"src="images/paypal.jpg" alt="">
-    <img class="payment-images"src="images/mastercard.jpg" alt="">
 
-    <h1 id="display-what-type-of-payment"></h1>
-    
+    <img class="payment-images" id="visa" src="images/visa.png" onclick="document.getElementById('form-of-payment').style.display='block'">
+    <img class="payment-images" id ="paypal"src="images/paypal.jpg" onclick="document.getElementById('form-of-payment').style.display='block'">
+    <img class="payment-images" id="mastercard"src="images/mastercard.jpg" onclick="document.getElementById('form-of-payment').style.display='block'">
+      <h1 id="display-what-type-of-payment"></h1><br><br>
+      <h1 id="payment-mode"></h1>
+
+    <form style ="display:none" id="form-of-payment" action="summary.html">
+      <div class="form-row">
+        <div class="col">
+          <h6>First Name</h6>
+        </div>
+        <div class="col">
+          <h6 id="payment-label-last-name">Last name</h6>
+        </div>
+      </div>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" id="payment-first-name" placeholder="">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" id="payment-last-name" placeholder="">
+    </div>
+  </div><br>
+  <div class="form-row">
+    <div class="col">
+      <h6>Credit card number</h6>
+    </div>
+    <div class="col">
+      <h6 id="payment-label-expiration-date">Expiration date</h6>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" id="credit-number" placeholder="xxxx-xxxx-xxxx-xxxx">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+    </div>
+    <div class="col">
+      <input type="date" class="form-control" id="expiration-date"placeholder="Expiration Date">
+    </div>
+  </div>
+  <br>
+  <div class="form-row">
+    <div class="col">
+      <h6>CV code</h6>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" id="cv-code" placeholder="XXX">
+    </div>
+  <br>
+  <div class="col">
+
+  <button type="submit" class="btn btn-primary">Book</button>
+  <a href="passengerDetails.html" role="button" class="btn btn-secondary">Back</button></a>
+  </div>
+</div>
+</form>
+
   </body>
   <footer>
     <script src="js/myJQuery.js"></script>

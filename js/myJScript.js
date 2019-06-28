@@ -84,18 +84,34 @@ $(document).ready(function(e){
   $(`.show-homies`).text(adultNumber + adult + childNumber + child + infantNumber + infant )
   $(`.show-cabin`).text(cabinClass + " Class")
 
-
   $(`.show-from-date`).text(departDate)
   $(`.show-return-date`).text(returnDate)
   $(`.show-from-where`).text(fromWhere)
   $(`.whereTo`).text(whereTo)
   $(`.whereToReturn`).text(whereTo)
 
+// DISPLAY IN SUMMARY
+  $(`#summary-name`).text()
+
 })
 
+// $(document).ready(function(e){
+//     var storage = window.localStorage
+//     $(`#go-to-passenger-details`).on(`submit`,function(e){
+// $(`#show-depart-date`).text(getDepartDate)
+// })
+// //e.preventDefault()
+// var setDepartDate = document.getElementById('try').innerHTML
+// storage.setItem('get-depart-date',setDepartDate)
+// var getDepartDate = storage.getItem('get-depart-date')
+// console.log(getDepartDate);
+//
+// })
 // for passenger details modal
+$(document).ready(function(e){
+  var storage = window.localStorage
   $(`#confirm-passenger`).click(function(e){
-    var storage = window.localStorage
+
     var firstName=$(`#first-name`).val()
     var lastName=$(`#last-name`).val()
     var passportNumber=$(`#passport-number`).val()
@@ -111,10 +127,12 @@ $(document).ready(function(e){
     var modalNameLabel = "Name: "
     var passportNumberLabel = "Passport Number: "
 
-
-
   $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
   $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
+
+})
+// DISPLAY IN SUMMARY
+  $(`#summary-name`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
 })
 
 //for second passenger
@@ -155,6 +173,21 @@ $(`#another-confirm-passenger`).click(function(e){
   $(`#other-passenger-name`).text(displayName + secondFirstNameOfPassenger +" " + secondLastName)
   $(`#other-passenger-passport-number`).text(displayPassportNumber + secondPassportNumberOfPassenger)
 
+})
+
+// payment section
+
+$(`#visa`).click(function(e){
+  var showLogo = "Visa"
+  $(`#display-what-type-of-payment`).text(showLogo)
+})
+$(`#paypal`).click(function(e){
+  var showLogo = "Paypal"
+    $(`#display-what-type-of-payment`).text(showLogo)
+})
+$(`#mastercard`).click(function(e){
+  var showLogo = "Master Card"
+    $(`#display-what-type-of-payment`).text(showLogo)
 })
 
 
