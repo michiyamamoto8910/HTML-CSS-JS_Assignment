@@ -17,10 +17,13 @@
   <nav>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" href="login.html" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+        <a class="nav-link active" href="login.html" data-toggle="modal" data-target="#exampleModalCenter" id="login-id">Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign up</a>
+        <a class="nav-link" href="main.html" id="signup-id">Sign up</a>
+      </li>
+      <li class="nav-item" style="display:none" id="logout-id">
+        <a href="main.html"><button onclick="window.localStorage.clear();" type="button" name="button"  class="btn btn-link">Logout</a></button>
       </li>
     </ul>
   </nav>
@@ -36,7 +39,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="loginform" action="userMain.html">
+          <form id="loginform" action="Main.html">
             <div class="form-row align-items-center">
               <div class="col-auto">
                 <label class="sr-only" for="username">Name</label>

@@ -8,13 +8,22 @@ $(document).ready(function(e){
   var greeting = 'Welcome!'
   var emptyusername='Guest'
   let welcomemessage='Search flights below'
+  var login = document.getElementById('login-id')
+  var signup = document.getElementById('signup-id')
+  var logout = document.getElementById('logout-id')
+
+
   if(storage.getItem('username')){
     welcomemessage="It's good to have you back"
+    login.style.visibility='hidden'
+    signup.style.visibility='hidden'
+    document.getElementById('logout-id').style.display="block"
   }
   var storedUsername=storage.getItem('username')||emptyusername
   $(`#welcomeuser`).text(greeting+' '+storedUsername)
   $(`#welcomemessage`).text(welcomemessage)
 })
+
 
 // -------------------------------------------------------------------------------------------------------------
 
@@ -85,11 +94,60 @@ $(document).ready(function(e){
   $(`.show-cabin`).text(cabinClass + " Class")
 
   $(`.show-from-date`).text(departDate)
+
+  $(`.whereTo`).text(whereTo)
+
   $(`.show-return-date`).text(returnDate)
   $(`.show-from-where`).text(fromWhere)
-  $(`.whereTo`).text(whereTo)
   $(`.whereToReturn`).text(whereTo)
+  $(`#show-from-where-return`).text(fromWhere)
+console.log(returnDate)
+if(returnDate===""){
+  $(`.show-return-date`).text(" ")
+  $(`.time-return`).text(" ")
+  $(`.whereToReturn`).text(" ")
+  $(`#show-from-where-return`).text(" ")
+  document.getElementById('arrow-return-id').style.display="none"
+  document.getElementById('arrow-return-id-2').style.display="none"
+  document.getElementById('arrow-return-id-3').style.display="none"
+  document.getElementById('arrow-return-id-4').style.display="none"
+  document.getElementById('arrow-return-id-5').style.display="none"
+  document.getElementById('arrow-image-return').disabled=true;
 
+  [].forEach.call(document.querySelectorAll('.arrow-return'), function (el) {
+  el.style.visibility = 'hidden';
+});
+var adultNumber = storage.getItem('number-of-adults')
+var infantNumber = storage.getItem('number-of-infants')
+var childNumber = storage.getItem('number-of-child')
+var cabinClass = storage.getItem('cabin-class')
+
+var departDate = storage.getItem('depart-date')
+var returnDate = storage.getItem('return-date')
+
+var whereTo = storage.getItem('whereTo')
+var fromWhere = storage.getItem('fromWhere')
+
+let adult=" Adult,"
+let child= " Child,"
+let infant=" Infant"
+
+if(adultNumber < 1){
+  adult=""
+}
+if(infantNumber < 1){
+  infant=""
+  child=" Child"
+}
+if(childNumber < 1){
+  child=""
+  adult=" Adult"
+}
+
+if(childNumber < 1 && infantNumber >= 1){
+  adult = " Adult,"
+}
+}
   // DISPLAY IN SUMMARY
   $(`#summary-from-where`).text(fromWhere)
   $(`#summary-from-to`).text(whereTo)
@@ -100,21 +158,63 @@ $(document).ready(function(e){
 
 })
 
-// FOR GETTING TIME
+// FOR GETTING TIME AND PRICE
+
+//PAL
  $(document).ready(function(e){
   var storage = window.localStorage
-  $(`#go-to-passenger-details`).on(`submit`,function(e){
-  var setDepartDate = document.getElementById('try').innerHTML
- storage.setItem('get-depart-date',setDepartDate)
- console.log(getDepartDate);
-})
-var getDepartDate = storage.getItem('get-depart-date')
-$(`#summary-depart-time`).text(getDepartDate)
-})
-// for passenger details modal
+  $(`#go-to-passenger-details-pal`).on(`submit`,function(e){
+  var setDepartTime = document.getElementById('pal-depart-time').innerHTML
+  var setReturnTime = document.getElementById('pal-return-time').innerHTML
+  var setPrice = document.getElementById('pal-price').innerHTML
+  var setAirline = document.getElementById('pal-name').innerHTML
 
-  $(`#confirm-passenger`).click(function(e){
-    var storage = window.localStorage
+  storage.setItem('pal-name',setAirline)
+  storage.setItem('pal-price', setPrice)
+  storage.setItem('get-depart-time',setDepartTime)
+  storage.setItem('get-return-time',setReturnTime)
+})
+var getDepartTime = storage.getItem('get-depart-time')
+var getReturnTime = storage.getItem('get-return-time')
+var getPalPrice = storage.getItem('pal-price')
+var getAirlineName = storage.getItem('pal-name')
+
+$(`#summary-airline`).text(getAirlineName)
+$(`#summary-price`).text(getPalPrice)
+$(`#summary-depart-time`).text(getDepartTime)
+$(`#summary-return-time`).text(getReturnTime)
+})
+
+//CATHAY Pacific
+$(document).ready(function(e){
+ var storage = window.localStorage
+ $(`#go-to-passenger-details-cathay`).on(`submit`,function(e){
+ var setDepartTimeCathay = document.getElementById('cathay-depart-time').innerHTML
+ var setReturnTimeCathay = document.getElementById('cathay-return-time').innerHTML
+ var setPriceCathay = document.getElementById('cathay-price').innerHTML
+ var setAirlineCathay = document.getElementById('cathay-name').innerHTML
+
+ storage.setItem('pal-name-cathay',setAirlineCathay)
+ storage.setItem('pal-price-cathay', setPriceCathay)
+ storage.setItem('get-depart-time-cathay',setDepartTimeCathay)
+ storage.setItem('get-return-time-cathay',setReturnTimeCathay)
+})
+var getDepartTimeCathay = storage.getItem('get-depart-time-cathay')
+var getReturnTimeCathay = storage.getItem('get-return-time-cathay')
+var getPalPriceCathay = storage.getItem('pal-price-cathay')
+var getAirlineNameCathay = storage.getItem('pal-name-cathay')
+
+$(`#summary-airline`).text(getAirlineNameCathay)
+$(`#summary-price`).text(getPalPriceCathay)
+$(`#summary-depart-time`).text(getDepartTimeCathay)
+$(`#summary-return-time`).text(getReturnTimeCathay)
+})
+
+// for passenger details modal
+$(document).ready(function(e){
+  var storage = window.localStorage
+  $(`#confirm-passenger-form`).on(`submit`,function(e){
+    e.preventDefault()
     var firstName=$(`#first-name`).val()
     var lastName=$(`#last-name`).val()
     var passportNumber=$(`#passport-number`).val()
@@ -132,14 +232,24 @@ $(`#summary-depart-time`).text(getDepartDate)
     $(`#first-name-modal`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
     $(`#passport-number-modal`).text(passportNumberLabel+" "+passportNumberOfPassenger)
 
-    // DISPLAY IN SUMMARY
-    $(`#summary-name`).text(modalNameLabel + firstNameOfPassenger +" "+ lastNameOfPassenger)
-  })
+    })
+    var firstNameOfPassengers = storage.getItem('first-name')
+    var lastNameOfPassengers = storage.getItem(`last-name`)
+    var passportNumberOfPassengers = storage.getItem(`passport-number`)
 
+    var modalNameLabels = "Name: "
+    var passportNumberLabels = "Passport Number: "
+
+    // DISPLAY IN SUMMARY
+    $(`#summary-name`).text(modalNameLabels + firstNameOfPassengers +" "+ lastNameOfPassengers)
+
+})
 
 //for second passenger
-  $(`#another-confirm-passenger`).click(function(e){
+  $(document).ready(function(e){
     var storage = window.localStorage
+  $(`#another-confirm-passenger-form`).on(`submit`,function(e){
+    e.preventDefault()
     var firstName=$(`#first-name`).val()
     var lastName=$(`#last-name`).val()
     var passportNumber=$(`#passport-number`).val()
@@ -175,8 +285,22 @@ $(`#summary-depart-time`).text(getDepartDate)
     $(`#other-passenger-name`).text(displayName + secondFirstNameOfPassenger +" " + secondLastNameOfPassenger)
     $(`#other-passenger-passport-number`).text(displayPassportNumber + secondPassportNumberOfPassenger)
   })
+  var firstNameOfPassengers = storage.getItem('first-name')
+  var lastNameOfPassengers = storage.getItem(`last-name`)
+  var passportNumberOfPassengers = storage.getItem(`passport-number`)
+  var secondFirstNameOfPassengers= storage.getItem('second-first-name')
+  var secondLastNameOfPassengers = storage.getItem('second-last-name')
+  var secondPassportNumberOfPassengers = storage.getItem('second-passport-number')
 
+  var modalNameLabels = "Name: "
+  var passportNumberLabels = "Passport Number: "
 
+    $(`#summary-name`).text(modalNameLabels + firstNameOfPassengers +" "+ lastNameOfPassengers)
+    if(secondFirstNameOfPassengers){
+      $(`#summary-second-passenger-name`).text(modalNameLabels+ " "+ secondFirstNameOfPassengers + secondLastNameOfPassengers)
+    }
+
+})
 
 // payment section
 
@@ -193,6 +317,9 @@ $(`#mastercard`).click(function(e){
   $(`#display-what-type-of-payment`).text(showLogo)
 })
 
+$(window).unload(function(){
+  localStorage.clear();
+});
 // $(document).ready(function(e){
 //   var storage = window.localStorage
 //   $(`#form-of-payment`).on(`submit`,function(e){
