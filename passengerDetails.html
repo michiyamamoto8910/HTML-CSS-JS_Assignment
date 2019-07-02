@@ -27,8 +27,10 @@
     </ul>
   </nav>
 
-<form class="" id="confirm-passenger-form" action="index.html" method="post">
 
+
+<form class="" id="confirm-passenger-form" action="index.html" method="post">
+<div id="border-1">
   <h1 class="h2">Personal Information</h1>
   <div class="totheright">
   <div class="form-row">
@@ -73,18 +75,22 @@
       <input type="date" class="form-control" id="passport-expiration" placeholder="">
     </div>
   </div>
+</div>
   <div id="searchbutton">
       <button id="confirm-passenger" type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirm-details-modal">Submit</button>
       <button onclick="getElementById('another-passenger').style.display='block';
       getElementById(`confirm-passenger`).style.display='none';
-      getElementById(`second-passenger`).style.display='block'" type="button" class="btn btn-warning btn-lg" >Add Another passenger</button>
+      getElementById(`second-passenger`).style.display='block'" type="button" id="add-another-passenger" class="btn btn-warning btn-lg" >Add Another passenger</button>
     </div>
   </div>
 </form>
+<br><br>
 
 
 <!-- SECOND FORM FOR ADD ANOTHER PASSENGER -->
 <form class="" id="another-confirm-passenger-form" action="index.html" method="post">
+  <div id="border-2">
+
 <div style="display:none" id="another-passenger">
   <h1 class="h1" id="second-passenger" style="display:none">Passenger 2</h1>
 
@@ -136,10 +142,11 @@
       <button id="another-confirm-passenger" type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#confirm-details-modal">Submit</button>
       <button onclick="getElementById(`another-passenger`).style.display='none';
       getElementById(`confirm-passenger`).style.display='block';"type="button" name="button"
-      class="btn btn-danger btn-lg">Cancel adding</button>
+      class="btn btn-danger btn-lg" id="cancel-button">Cancel adding</button>
     </div>
   </div>
 </div>
+  </div>
 </form>
 
 <!-- Modal -->

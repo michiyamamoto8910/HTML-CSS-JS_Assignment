@@ -100,20 +100,18 @@ $(document).ready(function(e){
   $(`.show-return-date`).text(returnDate)
   $(`.show-from-where`).text(fromWhere)
   $(`.whereToReturn`).text(whereTo)
-  $(`#show-from-where-return`).text(fromWhere)
+  $(`.show-from-where-return`).text(fromWhere)
 console.log(returnDate)
 if(returnDate===""){
   $(`.show-return-date`).text(" ")
   $(`.time-return`).text(" ")
   $(`.whereToReturn`).text(" ")
-  $(`#show-from-where-return`).text(" ")
+  $(`.show-from-where-return`).text(" ")
   document.getElementById('arrow-return-id').style.display="none"
   document.getElementById('arrow-return-id-2').style.display="none"
   document.getElementById('arrow-return-id-3').style.display="none"
   document.getElementById('arrow-return-id-4').style.display="none"
-  document.getElementById('arrow-return-id-5').style.display="none"
-  document.getElementById('arrow-image-return').disabled=true;
-
+  document.getElementById('arrow-return-id-5').style.display="none";
   [].forEach.call(document.querySelectorAll('.arrow-return'), function (el) {
   el.style.visibility = 'hidden';
 });
@@ -149,12 +147,18 @@ if(childNumber < 1 && infantNumber >= 1){
 }
 }
   // DISPLAY IN SUMMARY
-  $(`#summary-from-where`).text(fromWhere)
-  $(`#summary-from-to`).text(whereTo)
+  $(`#summary-from-where`).text("from " + fromWhere + " "+ "to "+whereTo)
+  //$(`#summary-from-to`).text(whereTo)
   $(`#summary-depart-date`).text(departDate)
   $(`#summary-return-date`).text(returnDate)
   $(`#summary-travellers`).text(adultNumber + adult + childNumber + child + infantNumber + infant)
   $(`#summary-cabin-class`).text(cabinClass + " Class")
+
+  $(`#summary-from-wheres`).text("from " + fromWhere + " "+ "to "+whereTo)
+  //$(`#summary-from-to`).text(whereTo)
+  $(`#summary-depart-dates`).text(departDate)
+  $(`#summary-return-dates`).text(returnDate)
+  $(`#summary-cabin-classs`).text(cabinClass + " Class")
 
 })
 
@@ -183,32 +187,38 @@ $(`#summary-airline`).text(getAirlineName)
 $(`#summary-price`).text(getPalPrice)
 $(`#summary-depart-time`).text(getDepartTime)
 $(`#summary-return-time`).text(getReturnTime)
+
+$(`#summary-airlines`).text(getAirlineName)
+$(`#summary-depart-times`).text(getDepartTime)
+$(`#summary-return-times`).text(getReturnTime)
 })
+
 
 //CATHAY Pacific
-$(document).ready(function(e){
- var storage = window.localStorage
- $(`#go-to-passenger-details-cathay`).on(`submit`,function(e){
- var setDepartTimeCathay = document.getElementById('cathay-depart-time').innerHTML
- var setReturnTimeCathay = document.getElementById('cathay-return-time').innerHTML
- var setPriceCathay = document.getElementById('cathay-price').innerHTML
- var setAirlineCathay = document.getElementById('cathay-name').innerHTML
+// $(document).ready(function(e){
+//  var storage = window.localStorage
+//  $(`#go-to-passenger-details-cathay`).on(`submit`,function(e){
+//  var setDepartTimeCathay = document.getElementById('cathay-depart-time').innerHTML
+//  var setReturnTimeCathay = document.getElementById('cathay-return-time').innerHTML
+//  var setPriceCathay = document.getElementById('cathay-price').innerHTML
+//  var setAirlineCathay = document.getElementById('cathay-name').innerHTML
+//
+//  storage.setItem('pal-name-cathay',setAirlineCathay)
+//  storage.setItem('pal-price-cathay', setPriceCathay)
+//  storage.setItem('get-depart-time-cathay',setDepartTimeCathay)
+//  storage.setItem('get-return-time-cathay',setReturnTimeCathay)
+// })
+// var getDepartTimeCathay = storage.getItem('get-depart-time-cathay')
+// var getReturnTimeCathay = storage.getItem('get-return-time-cathay')
+// var getPalPriceCathay = storage.getItem('pal-price-cathay')
+// var getAirlineNameCathay = storage.getItem('pal-name-cathay')
+//
+// $(`#summary-airline`).text(getAirlineNameCathay)
+// $(`#summary-price`).text(getPalPriceCathay)
+// $(`#summary-depart-time`).text(getDepartTimeCathay)
+// $(`#summary-return-time`).text(getReturnTimeCathay)
+// })
 
- storage.setItem('pal-name-cathay',setAirlineCathay)
- storage.setItem('pal-price-cathay', setPriceCathay)
- storage.setItem('get-depart-time-cathay',setDepartTimeCathay)
- storage.setItem('get-return-time-cathay',setReturnTimeCathay)
-})
-var getDepartTimeCathay = storage.getItem('get-depart-time-cathay')
-var getReturnTimeCathay = storage.getItem('get-return-time-cathay')
-var getPalPriceCathay = storage.getItem('pal-price-cathay')
-var getAirlineNameCathay = storage.getItem('pal-name-cathay')
-
-$(`#summary-airline`).text(getAirlineNameCathay)
-$(`#summary-price`).text(getPalPriceCathay)
-$(`#summary-depart-time`).text(getDepartTimeCathay)
-$(`#summary-return-time`).text(getReturnTimeCathay)
-})
 
 // for passenger details modal
 $(document).ready(function(e){
@@ -242,6 +252,7 @@ $(document).ready(function(e){
 
     // DISPLAY IN SUMMARY
     $(`#summary-name`).text(modalNameLabels + firstNameOfPassengers +" "+ lastNameOfPassengers)
+    $(`#summary-names`).text(firstNameOfPassengers +" "+ lastNameOfPassengers)
 
 })
 
@@ -297,7 +308,8 @@ $(document).ready(function(e){
 
     $(`#summary-name`).text(modalNameLabels + firstNameOfPassengers +" "+ lastNameOfPassengers)
     if(secondFirstNameOfPassengers){
-      $(`#summary-second-passenger-name`).text(modalNameLabels+ " "+ secondFirstNameOfPassengers + secondLastNameOfPassengers)
+      $(`#summary-second-passenger-name`).text(modalNameLabels+ " "+ secondFirstNameOfPassengers +" "+ secondLastNameOfPassengers)
+        $(`#summary-second-passenger-names`).text(secondFirstNameOfPassengers +" "+ secondLastNameOfPassengers)
     }
 
 })
@@ -317,9 +329,31 @@ $(`#mastercard`).click(function(e){
   $(`#display-what-type-of-payment`).text(showLogo)
 })
 
-$(window).unload(function(){
-  localStorage.clear();
+$(document).ready(function(){
+  $('.toast').toast('show');
 });
+
+
+
+$(function () {
+    var specialElementHandlers = {
+        '#editor': function (element,renderer) {
+            return true;
+        }
+    };
+ $('#download-it').click(function () {
+        var doc = new jsPDF();
+        doc.fromHTML(
+            $('#to-download').html(), 15, 15,
+            { 'width': 170, 'elementHandlers': specialElementHandlers },
+            function(){ doc.save('Flight-Summary'); }
+        );
+
+    });
+
+  });
+
+
 // $(document).ready(function(e){
 //   var storage = window.localStorage
 //   $(`#form-of-payment`).on(`submit`,function(e){
