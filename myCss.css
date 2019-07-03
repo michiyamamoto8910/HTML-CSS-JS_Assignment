@@ -7,7 +7,7 @@
   width: 2em;
 }
 #searchbutton{
-  margin-left: 40%
+  margin-left: 36.5%
 }
 #confirm-passenger{
   position:absolute;
@@ -190,4 +190,7 @@ margin-left: 5%
 }
 #download-it{
   margin-left: 30%
+}
+#summary-depart-date-label, #summary-return-date-label{
+  text-decoration: underline;
 }

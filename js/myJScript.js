@@ -101,51 +101,7 @@ $(document).ready(function(e){
   $(`.show-from-where`).text(fromWhere)
   $(`.whereToReturn`).text(whereTo)
   $(`.show-from-where-return`).text(fromWhere)
-console.log(returnDate)
-if(returnDate===""){
-  $(`.show-return-date`).text(" ")
-  $(`.time-return`).text(" ")
-  $(`.whereToReturn`).text(" ")
-  $(`.show-from-where-return`).text(" ")
-  document.getElementById('arrow-return-id').style.display="none"
-  document.getElementById('arrow-return-id-2').style.display="none"
-  document.getElementById('arrow-return-id-3').style.display="none"
-  document.getElementById('arrow-return-id-4').style.display="none"
-  document.getElementById('arrow-return-id-5').style.display="none";
-  [].forEach.call(document.querySelectorAll('.arrow-return'), function (el) {
-  el.style.visibility = 'hidden';
-});
-var adultNumber = storage.getItem('number-of-adults')
-var infantNumber = storage.getItem('number-of-infants')
-var childNumber = storage.getItem('number-of-child')
-var cabinClass = storage.getItem('cabin-class')
 
-var departDate = storage.getItem('depart-date')
-var returnDate = storage.getItem('return-date')
-
-var whereTo = storage.getItem('whereTo')
-var fromWhere = storage.getItem('fromWhere')
-
-let adult=" Adult,"
-let child= " Child,"
-let infant=" Infant"
-
-if(adultNumber < 1){
-  adult=""
-}
-if(infantNumber < 1){
-  infant=""
-  child=" Child"
-}
-if(childNumber < 1){
-  child=""
-  adult=" Adult"
-}
-
-if(childNumber < 1 && infantNumber >= 1){
-  adult = " Adult,"
-}
-}
   // DISPLAY IN SUMMARY
   $(`#summary-from-where`).text("from " + fromWhere + " "+ "to "+whereTo)
   //$(`#summary-from-to`).text(whereTo)
@@ -160,6 +116,21 @@ if(childNumber < 1 && infantNumber >= 1){
   $(`#summary-return-dates`).text(returnDate)
   $(`#summary-cabin-classs`).text(cabinClass + " Class")
 
+  if(returnDate===""){
+    $(`.show-return-date`).text(" ")
+    $(`.time-return`).text(" ")
+    $(`.whereToReturn`).text(" ")
+    $(`.show-from-where-return`).text(" ")
+    document.getElementById('arrow-return-id').style.display="none"
+    document.getElementById('arrow-return-id-2').style.display="none"
+    document.getElementById('arrow-return-id-3').style.display="none"
+    document.getElementById('arrow-return-id-4').style.display="none"
+    document.getElementById('arrow-return-id-5').style.display="none";
+
+    [].forEach.call(document.querySelectorAll('.arrow-return'), function (el) {
+    el.style.visibility = 'hidden';
+  });
+  }
 })
 
 // FOR GETTING TIME AND PRICE
@@ -167,16 +138,65 @@ if(childNumber < 1 && infantNumber >= 1){
 //PAL
  $(document).ready(function(e){
   var storage = window.localStorage
-  $(`#go-to-passenger-details-pal`).on(`submit`,function(e){
-  var setDepartTime = document.getElementById('pal-depart-time').innerHTML
-  var setReturnTime = document.getElementById('pal-return-time').innerHTML
-  var setPrice = document.getElementById('pal-price').innerHTML
-  var setAirline = document.getElementById('pal-name').innerHTML
+  $(`#go-to-passenger-details-pal`).click(function(e){
+   let setDepartTime = document.getElementById('pal-depart-time').innerHTML
+  let setReturnTime = document.getElementById('pal-return-time').innerHTML
+  let setPrice = document.getElementById('pal-price').innerHTML
+  let setAirline = document.getElementById('pal-name').innerHTML
 
   storage.setItem('pal-name',setAirline)
   storage.setItem('pal-price', setPrice)
   storage.setItem('get-depart-time',setDepartTime)
   storage.setItem('get-return-time',setReturnTime)
+})
+
+$(`#go-to-passenger-details-cathay`).click(function(e){
+    var setDepartTime = document.getElementById('cathay-depart-time').innerHTML
+    var setReturnTime = document.getElementById('cathay-return-time').innerHTML
+    var setPrice = document.getElementById('cathay-price').innerHTML
+    var setAirline = document.getElementById('cathay-name').innerHTML
+
+    storage.setItem('pal-name',setAirline)
+    storage.setItem('pal-price', setPrice)
+    storage.setItem('get-depart-time',setDepartTime)
+    storage.setItem('get-return-time',setReturnTime)
+
+})
+$(`#go-to-passenger-details-jetstar`).click(function(e){
+    var setDepartTime = document.getElementById('jetstar-depart-time').innerHTML
+    var setReturnTime = document.getElementById('jetstar-return-time').innerHTML
+    var setPrice = document.getElementById('jetstar-price').innerHTML
+    var setAirline = document.getElementById('jetstar-name').innerHTML
+
+    storage.setItem('pal-name',setAirline)
+    storage.setItem('pal-price', setPrice)
+    storage.setItem('get-depart-time',setDepartTime)
+    storage.setItem('get-return-time',setReturnTime)
+
+})
+$(`#go-to-passenger-details-airasia`).click(function(e){
+    var setDepartTime = document.getElementById('airasia-depart-time').innerHTML
+    var setReturnTime = document.getElementById('airasia-return-time').innerHTML
+    var setPrice = document.getElementById('airasia-price').innerHTML
+    var setAirline = document.getElementById('airasia-name').innerHTML
+
+    storage.setItem('pal-name',setAirline)
+    storage.setItem('pal-price', setPrice)
+    storage.setItem('get-depart-time',setDepartTime)
+    storage.setItem('get-return-time',setReturnTime)
+
+})
+$(`#go-to-passenger-details-jal`).click(function(e){
+    var setDepartTime = document.getElementById('jal-depart-time').innerHTML
+    var setReturnTime = document.getElementById('jal-return-time').innerHTML
+    var setPrice = document.getElementById('jal-price').innerHTML
+    var setAirline = document.getElementById('jal-name').innerHTML
+
+    storage.setItem('pal-name',setAirline)
+    storage.setItem('pal-price', setPrice)
+    storage.setItem('get-depart-time',setDepartTime)
+    storage.setItem('get-return-time',setReturnTime)
+
 })
 var getDepartTime = storage.getItem('get-depart-time')
 var getReturnTime = storage.getItem('get-return-time')
@@ -192,32 +212,6 @@ $(`#summary-airlines`).text(getAirlineName)
 $(`#summary-depart-times`).text(getDepartTime)
 $(`#summary-return-times`).text(getReturnTime)
 })
-
-
-//CATHAY Pacific
-// $(document).ready(function(e){
-//  var storage = window.localStorage
-//  $(`#go-to-passenger-details-cathay`).on(`submit`,function(e){
-//  var setDepartTimeCathay = document.getElementById('cathay-depart-time').innerHTML
-//  var setReturnTimeCathay = document.getElementById('cathay-return-time').innerHTML
-//  var setPriceCathay = document.getElementById('cathay-price').innerHTML
-//  var setAirlineCathay = document.getElementById('cathay-name').innerHTML
-//
-//  storage.setItem('pal-name-cathay',setAirlineCathay)
-//  storage.setItem('pal-price-cathay', setPriceCathay)
-//  storage.setItem('get-depart-time-cathay',setDepartTimeCathay)
-//  storage.setItem('get-return-time-cathay',setReturnTimeCathay)
-// })
-// var getDepartTimeCathay = storage.getItem('get-depart-time-cathay')
-// var getReturnTimeCathay = storage.getItem('get-return-time-cathay')
-// var getPalPriceCathay = storage.getItem('pal-price-cathay')
-// var getAirlineNameCathay = storage.getItem('pal-name-cathay')
-//
-// $(`#summary-airline`).text(getAirlineNameCathay)
-// $(`#summary-price`).text(getPalPriceCathay)
-// $(`#summary-depart-time`).text(getDepartTimeCathay)
-// $(`#summary-return-time`).text(getReturnTimeCathay)
-// })
 
 
 // for passenger details modal
@@ -329,12 +323,13 @@ $(`#mastercard`).click(function(e){
   $(`#display-what-type-of-payment`).text(showLogo)
 })
 
+// SUMMARY
 $(document).ready(function(){
   $('.toast').toast('show');
 });
 
 
-
+// FOR GENERATING PDF
 $(function () {
     var specialElementHandlers = {
         '#editor': function (element,renderer) {
