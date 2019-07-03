@@ -349,52 +349,7 @@ $(function () {
   });
 
 
-// $(document).ready(function(e){
-//   var storage = window.localStorage
-//   $(`#form-of-payment`).on(`submit`,function(e){
-//     var fname= $(`#payment-first-name`).val()
-//     var lname = $(`#payment-last-name`).val()
-//
-//     storage.setItem('first-name', fname)
-//     storage.setItem('last-name', lname)
-//   })
-//   var firstNameOfPassengerFromPayment = storage.getItem('first-name')
-//   var lastNameOfPassengerFromPayment = storage.getItem('last-name')
-//   var nameForSummary = "Name: "
-//   console.log(firstNameOfPassengerFromPayment);
-//   $(`#summary-name`).text(nameForSummary+firstNameOfPassengerFromPayment)
-//
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // $(document).ready(function(){
-// //   var storage=window.localStorage
-// //   $(`#mainform`).on(`submit`,function(e){
-// //     e.preventDefault()
-// //     var wherefrom=$(`#from`).val()
-// //     //storage.setItem('from', wherefrom)
-// //     var whereTo=$(`#to`).val()
-// //     var whendepart=$(`#depart`).val()
-// //     var whenreturn=$(`#return`).val()
-// //     $(`#displayfrom`).text(wherefrom)
-// //     $(`#displayto`).text(whereTo)
-// //     $(`#displaydepart`).text(whendepart)
-// //     $(`#displayreturn`).text(whenreturn)
-// //   })
-//   //var storedFrom=storage.getItem('from')
-//   //$(`#displayfrom`).text(storedFrom)
-//   // storage.clear()
-// })
+// POPOVERS
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();
+});

@@ -194,3 +194,40 @@ margin-left: 5%
 #summary-depart-date-label, #summary-return-date-label{
   text-decoration: underline;
 }
+
+/* FOOTER */
+#tokyo-tower{
+  opacity: 0;
+  position: absolute;
+  top: 950px;
+}
+#merlion{
+  opacity: 0;
+  position: absolute;
+  top:840px;
+  left: 200px;
+}
+#santorini{
+  opacity: 0;
+  position: absolute;
+  top:860px;
+  left: 630px;
+}
+#ocean{
+  opacity: 0;
+  position: absolute;
+  top:880px;
+  left: 1050px;
+}
+#boracay{
+  opacity: 0;
+  position: absolute;
+  top: 1000px;
+  left: 400px;
+}
+#maldives{
+  opacity: 0;
+  position: absolute;
+  top: 1000px;
+  left: 800px;
+}
