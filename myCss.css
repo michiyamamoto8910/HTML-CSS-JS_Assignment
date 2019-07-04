@@ -2,32 +2,72 @@
       padding-top: 3%;
       padding-bottom: 3%;
     }
+
+.background-of-page{
+  background-image: linear-gradient(to right, rgba(220, 245, 247 ,0), rgba(220, 245, 247 ,0), rgba(220, 245, 247 ,1));
+  z-index: -1;
+
+}
 /* travellers */
 #number-of-adults, #number-of-child, #number-of-infants{
   width: 2em;
 }
-#searchbutton{
-  margin-left: 36.5%
+#searchbutton-div{
+  position:absolute;
+  left:400px;
+  width: 100px;
+  height: 100px;
+  top: 620px;
+  background-image: url("arrow-for-search.png");
+  -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+  transition: width 2s;
 }
+#searchbutton-div:hover {
+  width: 480px;
+}
+#searchbutton{
+    position:absolute;
+    left:7px;
+    top: 20px;
+    z-index: 10;
+    font-weight: bolder;
+}
+#bubbles{
+  position:absolute;
+  left:380px;
+  top: 605px;
+  width: 150px;
+}
+#search{
+  position:absolute;
+  left:515px;
+  top: 635px;
+  width: 80px;
+  height:80px;
+  z-index:10;
+}
+
 #confirm-passenger{
   position:absolute;
-  top:600px;
+  top:585px;
   left:700px;
 }
 #add-another-passenger{
   position:absolute;
-  top:600px;
+  top:585px;
   left:850px;
+  width: 250px;
 }
 #another-confirm-passenger{
   position: absolute;
-  top:1220px;
+  top: 1195px;
   left: 700px;
 }
 #cancel-button{
   position: absolute;
-  top: 1220px;
+  top: 1195px;
   left: 850px;
+  width: 170px;
 }
 /* textfields */
 .totheright{

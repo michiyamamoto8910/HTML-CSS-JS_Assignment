@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="myCss.css">
   </head>
   <body>
+    <div class="background-of-page">
     <!-- NAV, LOGIN -->
     <div>
       <a href="main.html">
@@ -43,7 +44,7 @@
     <h6 id="summary-depart-date"></h6>
     <h6 id="summary-depart-time"></h6>
     <br>
-    <h6 id="summary-return-date-label">Return date and time</h6>
+    <h6 id="summary-return-date-label"></h6>
     <h6 id="summary-return-date"></h6>
     <h6 id="summary-return-time"></h6>
     <br>
@@ -52,7 +53,6 @@
     <h6 id ="summary-cabin-class"></h6>
     <h6 id="summary-price"></h6>
     <h6>Reference number:89014819</h6>
-
 </div>
 
 
@@ -70,7 +70,7 @@
     <h3 id="summary-depart-dates"></h3>
     <h3 id="summary-depart-times"></h3>
     <br><br>
-    <h3 id="download-summary-return-date-label">Return date and time</h3>
+    <h3 id="download-summary-return-date-label"></h3>
     <h3 id="summary-return-dates"></h3>
     <h3 id="summary-return-times"></h3>
     <br><br>
@@ -82,7 +82,7 @@
 
 </div>
 <div id="editor"></div>
-  <button id="download-it" class="btn btn-warning btn-lg">Download PDF</button>
+  <button id="download-it" class="btn btn-warning btn-lg" onclick="window.localStorage.removeItem('second-first-name')">Download PDF</button>
 
     <div class="toast" data-delay="3000">
         <div class="toast-header">
@@ -94,7 +94,7 @@
         </div>
       </div>
 
-
+</div>
   </body>
   <footer>
     <script src="js/myJQuery.js"></script>

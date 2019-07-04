@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="myCss.css">
 </head>
 <body>
-
+  <div class="background-of-page">
   <div>
     <a href="main.html">
     <img src="images/logo.jpg" alt="Logo" height="100" width="200">
@@ -27,6 +27,43 @@
     </ul>
   </nav>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="loginform" action="passengerDetails.html">
+            <div class="form-row align-items-center">
+              <div class="col-auto">
+                <label class="sr-only" for="username">Name</label>
+                <input type="text" class="form-control mb-2" id="username" placeholder="Username" /required>
+              </div>
+              <div class="col-auto">
+                <label class="sr-only" for="password">Username</label>
+                <div class="input-group mb-2">
+                  <div class="input-group-prepend">
+                  </div>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="col-auto">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
 <form class="" id="confirm-passenger-form" action="index.html" method="post">
@@ -36,12 +73,12 @@
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="first-name" class="">First name</label>
-      <input type="text" class="form-control" id="first-name" placeholder="" >
+      <input type="text" class="form-control" id="first-name" placeholder="">
     </div>
     <div class="totherightside">
       <div class="form-group col-md-11">
         <label for="last-name" class="">Last name</label>
-        <input type="text" class="form-control" id="last-name" placeholder="" >
+        <input type="text" class="form-control" id="last-name" placeholder="">
       </div>
     </div>
   </div>
@@ -59,7 +96,7 @@
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="passport-number" class="">Passport number</label>
-      <input type="text" class="form-control" id="passport-number" placeholder="" >
+      <input type="text" class="form-control" id="passport-number" placeholder="">
     </div>
     <div class="totherightside">
       <div class="form-group col-md-11">
@@ -177,7 +214,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 </body>
 <footer>

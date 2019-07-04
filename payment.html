@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="myCss.css">
   </head>
   <body>
+    <div class="background-of-page">
     <div>
       <a href="main.html">
       <img src="images/logo.jpg" alt="Logo" height="100" width="200">
@@ -18,7 +19,7 @@
           <a class="nav-link active" href="login.html" data-toggle="modal" data-target="#exampleModalCenter" id="login-id">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="main.html" id="signup-id">Sign up</a>
+          <a class="nav-link" href="payment.html" id="signup-id">Sign up</a>
         </li>
         <li class="nav-item" style="display:none" id="logout-id">
           <a href="main.html"><button onclick="window.localStorage.clear();" type="button" name="button"  class="btn btn-link">Logout</a></button>
@@ -44,10 +45,10 @@
       </div>
   <div class="form-row">
     <div class="col">
-      <input type="text" class="form-control" id="payment-first-name" placeholder="">
+      <input type="text" class="form-control" id="payment-first-name" placeholder="" >
     </div>
     <div class="col">
-      <input type="text" class="form-control" id="payment-last-name" placeholder="">
+      <input type="text" class="form-control" id="payment-last-name" placeholder="" >
     </div>
   </div><br>
   <div class="form-row">
@@ -61,11 +62,11 @@
 
   <div class="form-row">
     <div class="col">
-      <input type="text" class="form-control" id="credit-number" placeholder="xxxx-xxxx-xxxx-xxxx">
+      <input type="text" class="form-control" id="credit-number" placeholder="xxxx-xxxx-xxxx-xxxx" >
       <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
     </div>
     <div class="col">
-      <input type="date" class="form-control" id="expiration-date"placeholder="Expiration Date">
+      <input type="date" class="form-control" id="expiration-date"placeholder="Expiration Date" >
     </div>
   </div>
   <br>
@@ -86,7 +87,7 @@
   </div>
 </div>
 </form>
-
+</div>
   </body>
   <footer>
     <script src="js/myJQuery.js"></script>

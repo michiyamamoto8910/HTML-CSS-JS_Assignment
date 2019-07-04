@@ -115,7 +115,14 @@ $(document).ready(function(e){
   $(`#summary-depart-dates`).text(departDate)
   $(`#summary-return-dates`).text(returnDate)
   $(`#summary-cabin-classs`).text(cabinClass + " Class")
-
+  var summaryReturnDateLabel = ""
+  $(`#summary-return-date-label`).text(summaryReturnDateLabel)
+  $(`#download-summary-return-date-label`).text(summaryReturnDateLabel)
+  if(returnDate){
+    var summaryReturnDateLabel = "Return Date and Time"
+    $(`#summary-return-date-label`).text(summaryReturnDateLabel)
+    $(`#download-summary-return-date-label`).text(summaryReturnDateLabel)
+  }
   if(returnDate===""){
     $(`.show-return-date`).text(" ")
     $(`.time-return`).text(" ")
